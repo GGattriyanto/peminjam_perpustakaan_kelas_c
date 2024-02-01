@@ -35,7 +35,6 @@ class RegisterController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
   register() async {
     loading(true);
     try {

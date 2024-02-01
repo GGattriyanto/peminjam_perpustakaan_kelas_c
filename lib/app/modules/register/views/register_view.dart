@@ -49,8 +49,7 @@ class RegisterView extends GetView<RegisterController> {
             ),
             TextFormField(
               controller: controller.alamatController,
-              decoration:
-              InputDecoration(hintText: "Masukkan Alamat"),
+              decoration: InputDecoration(hintText: "Masukkan Alamat"),
               validator: (value) {
                 if (value!.length < 2) {
                   return "Alamat tidak boleh kosong";
@@ -60,8 +59,7 @@ class RegisterView extends GetView<RegisterController> {
             ),
             TextFormField(
               controller: controller.passwordController,
-              decoration:
-              InputDecoration(hintText: "Masukkan Password"),
+              decoration: InputDecoration(hintText: "Masukkan Password"),
               validator: (value) {
                 if (value!.length < 2) {
                   return "Password tidak boleh kosong";

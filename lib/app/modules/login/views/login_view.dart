@@ -45,7 +45,7 @@ class LoginView extends GetView<LoginController> {
                 },
                 child: Text("Login")),),
             ElevatedButton(onPressed: ()=>Get.toNamed(Routes.REGISTER),
-                child: Text("Open Register"))
+                child: Text("Register"))
           ],
         ),),),
     );
