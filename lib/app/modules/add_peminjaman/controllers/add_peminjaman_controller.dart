@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -54,7 +55,7 @@ class AddPeminjamanController extends GetxController {
         }
       }
       loading(false);
-    } on dio.DioException catch (e) {
+    } on DioException catch (e) {
       loading(false);
       if (e.response != null) {
         if (e.response?.data != null) {
