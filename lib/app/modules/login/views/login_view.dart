@@ -16,10 +16,10 @@ class LoginView extends GetView<LoginController> {
         title: const Text('LoginView'),
         centerTitle: true,
       ),
-      backgroundColor: Colors.black54,
+      backgroundColor: Color(0xff171616),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 100),
           child: Form(
             key: controller.formkey,
             child: Column(
@@ -32,7 +32,7 @@ class LoginView extends GetView<LoginController> {
                   'assets/Logo Tok Putih.png'
                 )),
                 SizedBox(
-                  height: 80,
+                  height: 15,
                 ),
                 TextFormField(
                   controller: controller.usernameController,
@@ -93,12 +93,34 @@ class LoginView extends GetView<LoginController> {
                           onPressed: () {
                             controller.login();
                           },
-                          child: Text("Login")),
+                          child: Text("Login"),
+                          style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              primary: Color(0xffED5F5F),
+                              onPrimary: Colors.white,
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 50, vertical: 15),
+                              textStyle: TextStyle(
+                                  fontSize: 25, fontWeight: FontWeight.bold)),
+                        ),
                 ),
                 SizedBox(height: 8,),
                 ElevatedButton(
-                    onPressed: () => Get.toNamed(Routes.REGISTER),
-                    child: Text("Register"))
+                  onPressed: () => Get.toNamed(Routes.REGISTER),
+                  child: Text("Register"),
+                  style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      primary: Color(0xffED5F5F),
+                      onPrimary: Colors.white,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                      textStyle:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                )
               ],
             ),
           ),

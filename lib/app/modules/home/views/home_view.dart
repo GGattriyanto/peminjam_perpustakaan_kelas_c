@@ -22,6 +22,23 @@ class HomeView extends GetView<HomeController> {
             ],
           )
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.amberAccent,
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.bookmark),
+              label: 'Koleksi'
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'profile'
+          ),
+        ],
+      ),
     );
   }
 }
