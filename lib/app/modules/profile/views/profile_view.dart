@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
 import '../controllers/profile_controller.dart';
 
 class ProfileView extends GetView<ProfileController> {
@@ -18,6 +19,23 @@ class ProfileView extends GetView<ProfileController> {
           'ProfileView is working',
           style: TextStyle(fontSize: 20),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.amberAccent,
+        items: [
+          BottomNavigationBarItem(
+            icon: IconButton(onPressed: () => Get.toNamed(Routes.HOME),icon: Icon(Icons.home)),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+              icon: IconButton(onPressed: () => Get.toNamed(Routes.PEMINJAMAN),icon: Icon(Icons.bookmark)),
+              label: 'Koleksi'
+          ),
+          BottomNavigationBarItem(
+              icon: IconButton(onPressed: () => Get.toNamed(Routes.PROFILE), icon: Icon(Icons.person)),
+              label: 'profile'
+          ),
+        ],
       ),
     );
   }

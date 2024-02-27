@@ -28,7 +28,24 @@ class PeminjamanView extends GetView<PeminjamanController> {
         },
         separatorBuilder: (context, index)=> Divider(),
       ),onLoading: Center(child: CupertinoActivityIndicator())
-      )
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.amberAccent,
+        items: [
+          BottomNavigationBarItem(
+            icon: IconButton(onPressed: () => Get.toNamed(Routes.HOME),icon: Icon(Icons.home)),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+              icon: IconButton(onPressed: () => Get.toNamed(Routes.PEMINJAMAN),icon: Icon(Icons.bookmark)),
+              label: 'Koleksi'
+          ),
+          BottomNavigationBarItem(
+              icon: IconButton(onPressed: () => Get.toNamed(Routes.PROFILE), icon: Icon(Icons.person)),
+              label: 'profile'
+          ),
+        ],
+      ),
     );
   }
 }

@@ -26,15 +26,15 @@ class HomeView extends GetView<HomeController> {
         backgroundColor: Colors.amberAccent,
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: IconButton(onPressed: () => Get.toNamed(Routes.HOME),icon: Icon(Icons.home)),
               label: 'Home',
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.bookmark),
+              icon: IconButton(onPressed: () => Get.toNamed(Routes.PEMINJAMAN),icon: Icon(Icons.bookmark)),
               label: 'Koleksi'
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person),
+              icon: IconButton(onPressed: () => Get.toNamed(Routes.PROFILE), icon: Icon(Icons.person)),
               label: 'profile'
           ),
         ],
