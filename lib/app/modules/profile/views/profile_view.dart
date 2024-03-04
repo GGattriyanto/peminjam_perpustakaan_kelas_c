@@ -11,9 +11,11 @@ class ProfileView extends GetView<ProfileController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         title: const Text('ProfileView'),
         centerTitle: true,
       ),
+      backgroundColor: Color(0xff171616),
       body: const Center(
         child: Text(
           'ProfileView is working',
