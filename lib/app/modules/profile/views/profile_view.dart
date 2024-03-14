@@ -17,9 +17,26 @@ class ProfileView extends GetView<ProfileController> {
       ),
       backgroundColor: Color(0xff171616),
       body: const Center(
-        child: Text(
-          'ProfileView is working',
-          style: TextStyle(fontSize: 20),
+        child: Column(
+          children: [
+            SizedBox(height: 20,),
+            CircleAvatar(
+              backgroundColor: Colors.white,
+              radius: 100,
+              backgroundImage: AssetImage('assets/Logo Tok.png'),
+            ),
+            Text(
+              'Galang',
+              style: TextStyle(fontSize: 45,color: Colors.white,fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 40,),
+            ListTile(
+              textColor: Colors.white,
+              title: Text('Edit Profile',style: TextStyle(color: Colors.white),),
+              tileColor: Colors.transparent,
+              leading: Icon(Icons.person,color: Colors.white,),
+            ),
+          ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(

@@ -34,7 +34,7 @@ class BookView extends GetView<BookController> {
                     ),
                     primary: Color(0xffED5F5F),
                     onPrimary: Colors.white),
-              child: Text("Pinjam", style: TextStyle(color: Colors.white) ,)),
+              child: Text("Pinjam", style: TextStyle(color: Colors.white))),
           );
         },
         separatorBuilder: (context, index)=> Divider(),

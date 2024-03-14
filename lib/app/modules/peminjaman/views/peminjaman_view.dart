@@ -18,21 +18,28 @@ class PeminjamanView extends GetView<PeminjamanController> {
         centerTitle: true,
       ),
       backgroundColor: Color(0xff171616),
-      body: controller.obx((state) => ListView.separated(
-        itemCount: state!.length,
-        itemBuilder: (context, index){
-          DataPinjam dataPinjam = state[index];
-          return ListTile(
-            title: Text("${dataPinjam.book?.judul}",style: TextStyle(
-              color: Colors.white
-            ),),
-            subtitle: Text("Penulis ${dataPinjam.book?.penulis}\nPinjam : ${dataPinjam.tanggalPinjam}\nKembali : ${dataPinjam.tanggalKembali}",style:
-              TextStyle(color: Colors.white),),
-            trailing: Text("${dataPinjam.status}",style: TextStyle(color: Colors.white),),
-          );
-        },
-        separatorBuilder: (context, index)=> Divider(),
-      ),onLoading: Center(child: CupertinoActivityIndicator())
+      body: Center(
+        child: controller.obx((state) => ListView.separated(
+          itemCount: state!.length,
+          itemBuilder: (context, index){
+            DataPinjam dataPinjam = state[index];
+            return Card(
+              color: Color(0xffD9D9D9),
+              child: ListTile(
+                title: Text("${dataPinjam.book?.judul}",style: TextStyle(
+                  color: Colors.black,
+                      fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),),
+                // subtitle: Text("Penulis ${dataPinjam.book?.penulis}\nPinjam : ${dataPinjam.tanggalPinjam}\nKembali : ${dataPinjam.tanggalKembali}",style:
+                //   TextStyle(color: Colors.black),),
+                trailing: Text("${dataPinjam.status}",style: TextStyle(color: Colors.black,fontSize: 15,))
+              ),
+            );
+          },
+          separatorBuilder: (context, index)=> Divider(),
+        ),onLoading: Center(child: CupertinoActivityIndicator())
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.amberAccent,
