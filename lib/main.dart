@@ -6,10 +6,10 @@ import 'package:get_storage/get_storage.dart';
 import 'app/routes/app_pages.dart';
 
 void main() {
-  GetStorage.init();
+  // GetStorage.init();
   runApp(
     GetMaterialApp(
-      title: "Application",
+      title: "G-Library",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     ),

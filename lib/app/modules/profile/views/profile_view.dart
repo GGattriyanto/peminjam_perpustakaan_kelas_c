@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
+import 'package:peminjam_perpustakaan_kelas_c/app/modules/home/views/home_view.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/profile_controller.dart';
 
 class ProfileView extends GetView<ProfileController> {
   const ProfileView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,10 +16,12 @@ class ProfileView extends GetView<ProfileController> {
         centerTitle: true,
       ),
       backgroundColor: Color(0xff171616),
-      body: const Center(
+      body: Center(
         child: Column(
           children: [
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             CircleAvatar(
               backgroundColor: Colors.white,
               radius: 100,
@@ -27,15 +29,34 @@ class ProfileView extends GetView<ProfileController> {
             ),
             Text(
               'Galang',
-              style: TextStyle(fontSize: 45,color: Colors.white,fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 45,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 40,),
+            SizedBox(
+              height: 40,
+            ),
             ListTile(
+              title: Text('Edit Profile'),
               textColor: Colors.white,
-              title: Text('Edit Profile',style: TextStyle(color: Colors.white),),
-              tileColor: Colors.transparent,
               leading: Icon(Icons.person,color: Colors.white,),
+              onTap: () {
+                // Get.back();
+                Get.toNamed(Routes.HOME);
+              },
             ),
+            Divider(color: Colors.white),
+            ListTile(
+              title: Text('Log out'),
+              textColor: Colors.white,
+              leading: Icon(Icons.logout,color: Colors.white,),
+              onTap: () {
+                // Get.back();
+                Get.toNamed(Routes.LOGIN);
+              },
+            ),
+            Divider(color: Colors.white),
           ],
         ),
       ),
@@ -43,17 +64,21 @@ class ProfileView extends GetView<ProfileController> {
         backgroundColor: Colors.amberAccent,
         items: [
           BottomNavigationBarItem(
-            icon: IconButton(onPressed: () => Get.toNamed(Routes.HOME),icon: Icon(Icons.home)),
+            icon: IconButton(
+                onPressed: () => Get.toNamed(Routes.HOME),
+                icon: Icon(Icons.home)),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-              icon: IconButton(onPressed: () => Get.toNamed(Routes.PEMINJAMAN),icon: Icon(Icons.bookmark)),
-              label: 'Koleksi'
-          ),
+              icon: IconButton(
+                  onPressed: () => Get.toNamed(Routes.PEMINJAMAN),
+                  icon: Icon(Icons.bookmark)),
+              label: 'Koleksi'),
           BottomNavigationBarItem(
-              icon: IconButton(onPressed: () => Get.toNamed(Routes.PROFILE), icon: Icon(Icons.person)),
-              label: 'profile'
-          ),
+              icon: IconButton(
+                  onPressed: () => Get.toNamed(Routes.PROFILE),
+                  icon: Icon(Icons.person)),
+              label: 'profile'),
         ],
       ),
     );

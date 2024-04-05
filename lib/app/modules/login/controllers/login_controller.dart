@@ -11,11 +11,16 @@ import 'package:peminjam_perpustakaan_kelas_c/app/routes/app_pages.dart';
 import 'package:dio/dio.dart' as dio;
 
 class LoginController extends GetxController {
+  var obscureText = true.obs;
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final loading = false.obs;
 
+
+  void toggleObscureText() {
+    obscureText.value = !obscureText.value; // gunakan value untuk mengubah status obscureText
+  }
 
   @override
   void onInit() {
@@ -34,6 +39,7 @@ class LoginController extends GetxController {
 
   @override
   void onClose() {
+    passwordController.dispose();
     super.onClose();
   }
 
@@ -72,4 +78,6 @@ class LoginController extends GetxController {
       Get.snackbar("Error", e.toString(), backgroundColor: Colors.red);
     }
   }
+
+  void toggleObscure() {}
 }

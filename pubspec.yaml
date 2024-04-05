@@ -22,8 +22,8 @@ dev_dependencies:
     sdk: flutter
 
 flutter_native_splash:
-  color: "#cfcccc"
-  image: "assets/Logo Karo Tulisan Ireng.png"
+  color: "#1a1919"
+  image: "assets/img.png"
   android: true
   ios: true
   web: true

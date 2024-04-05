@@ -61,9 +61,10 @@ class LoginView extends GetView<LoginController> {
                   height: 15,
                 ),
                 TextFormField(
-                  obscureText: true,
+                  obscureText: false,
                   controller: controller.passwordController,
                   decoration: InputDecoration(
+                    // suffixIcon: Icon(Icons.remove_red_eye_rounded),
                       hintText: "Masukkan Password",
                       fillColor: Colors.white,
                       filled: true,
@@ -102,7 +103,7 @@ class LoginView extends GetView<LoginController> {
                               primary: Color(0xffED5F5F),
                               onPrimary: Colors.white,
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 50, vertical: 15),
+                                  horizontal: 70, vertical: 15),
                               textStyle: TextStyle(
                                   fontSize: 25, fontWeight: FontWeight.bold)),
                         ),
@@ -118,7 +119,7 @@ class LoginView extends GetView<LoginController> {
                       primary: Color(0xffED5F5F),
                       onPrimary: Colors.white,
                       padding:
-                          EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                          EdgeInsets.symmetric(horizontal: 56, vertical: 15),
                       textStyle:
                           TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
                 )
